@@ -14,7 +14,7 @@ def get_n_fibonacci_number(n: int):
         return second_fibonacci_number
 
     elif n < 1:
-        raise ValueError
+        raise AssertionError("Function takes only positive integers.")
 
     else:
         for i in range(n - 2):
@@ -22,6 +22,3 @@ def get_n_fibonacci_number(n: int):
             second_fibonacci_number = first_fibonacci_number + second_fibonacci_number
             first_fibonacci_number = to_become_first
         return second_fibonacci_number
-
-
-print(get_n_fibonacci_number(6))
