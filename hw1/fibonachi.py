@@ -2,7 +2,7 @@ def get_n_fibonacci_number(n: int):
     """
     Simple version of fibonacci number calculations, with cashing.
     :param n: int number of fibonacci sequences to return.
-    :return: int n'th fibonachi number.
+    :return: int n'th fibonacci number.
     """
     first_fibonacci_number = 0
     second_fibonacci_number = 1
