@@ -40,10 +40,14 @@ class AssignmentVisitor(ast.NodeVisitor):
         super().generic_visit(node)
 
 
-if __name__ == "__main__":
+def main(image_path: str = f"{HW_1_ROOT_PATH}/artifacts/ast.png"):
     tree = AssignmentVisitor()
     function_text = inspect.getsource(get_n_fibonacci_number)
     module = ast.parse(source=function_text)
     tree.visit(module)
     p = nx.drawing.nx_pydot.to_pydot(tree.graph)
-    p.write_png(f"{HW_1_ROOT_PATH}/artifacts/ast.png")
+    p.write_png(image_path)
+
+
+# if __name__ == "__main__":
+#     main()
