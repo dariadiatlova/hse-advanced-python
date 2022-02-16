@@ -63,6 +63,6 @@ def create_latex_table(data_to_create_table: list[list[Union[str, float, int]]],
     return latex_row
 
 
-# if __name__ == "__main__":
-#     create_latex_table([["id", "name", "age"], [0, "Cody", "29"], [1, "Sarah", "26"], [2, "Mike", "57"]],
-#                        f"{HW_2_ROOT_PATH}/artifacts/table.tex")
+if __name__ == "__main__":
+    create_latex_table([["id", "name", "age"], [0, "Cody", "29"], [1, "Sarah", "26"], [2, "Mike", "57"]],
+                       f"{HW_2_ROOT_PATH}/artifacts/table.tex")

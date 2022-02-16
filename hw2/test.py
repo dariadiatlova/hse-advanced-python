@@ -18,7 +18,7 @@ def test_latex_table(sequence):
 
 
 @pytest.fixture(params=[([["id", "name", "age"], [0, "Cody", "29"], [1, "Sarah", "26"], [2, "Mike", "57"]],
-                         r"\documentclass{article} \usepackage[utf8]{inputenc} \begin{document} "
+                         r"\documentclass{article} \usepackage[utf8]{inputenc} \begin{document} \\usepackage{graphicx} "
                          r"\begin{tabular}{|c|c|c|} \hline id&name&age\\ \hline 0&Cody&29\\ \hline 1&Sarah&26\\ "
                          r"\hline 2&Mike&57\\ \hline \end{tabular} \end{document}"),
 
