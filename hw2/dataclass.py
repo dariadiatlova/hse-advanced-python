@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class LatexTable(Enum):
+class LatexStrings(Enum):
     Space: str = " "
     LineEnd: str = r'\\'
     OpenBrace: str = "{"
@@ -10,7 +10,9 @@ class LatexTable(Enum):
     ColumnDivider: str = "c|"
     InnerColumnDivider: str = "&"
     StraightLine: str = r'\hline'
-    StartTable: str = r'\documentclass{article} \usepackage[utf8]{inputenc} \begin{document} \\usepackage{graphicx} ' \
+    StartTable: str = r'\documentclass{article} \usepackage[utf8]{inputenc} \usepackage{graphicx} \begin{document} ' \
                       r'\begin{tabular}'
-    EndTable: str = r'\end{tabular} \end{document}'
-
+    EndTable: str = r'\end{tabular}'
+    EndDocument: str = r'\end{document}'
+    StartImage: str = r"\begin{figure} \includegraphics[width=\linewidth]{"
+    EndImage: str = r"}\end{figure}"
