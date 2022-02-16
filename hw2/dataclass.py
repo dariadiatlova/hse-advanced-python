@@ -9,6 +9,6 @@ class LatexTable(Enum):
     ColumnDividerSymbol: str = "|"
     ColumnDivider: str = "c|"
     InnerColumnDivider: str = "&"
-    StraightLine: str = "\hline"
-    StartTable: str = r'\documentclass{article} \usepackage[utf8]{inputenc} \begin{tabular}'
-    EndTable: str = '\end{tabular} \end{document}'
+    StraightLine: str = r'\hline'
+    StartTable: str = r'\documentclass{article} \usepackage[utf8]{inputenc} \begin{document} \begin{tabular}'
+    EndTable: str = r'\end{tabular} \end{document}'

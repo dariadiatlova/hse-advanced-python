@@ -18,9 +18,9 @@ def test_latex_table(sequence):
 
 
 @pytest.fixture(params=[([["id", "name", "age"], [0, "Cody", "29"], [1, "Sarah", "26"], [2, "Mike", "57"]],
-                         r"\documentclass{article} \usepackage[utf8]{inputenc} \begin{tabular}{|c|c|c|} "
-                         r"\hline id&name&age\\ \hline 0&Cody&29\\ \hline 1&Sarah&26\\ \hline 2&Mike&57\\ \hline "
-                         r"\end{tabular} \end{document}"),
+                         r"\documentclass{article} \usepackage[utf8]{inputenc} \begin{document} "
+                         r"\begin{tabular}{|c|c|c|} \hline id&name&age\\ \hline 0&Cody&29\\ \hline 1&Sarah&26\\ "
+                         r"\hline 2&Mike&57\\ \hline \end{tabular} \end{document}"),
 
                         ([[1, 2, 3], [1, 2], [1, 2, 3]], AssertionError)])
 def sequence(request):
