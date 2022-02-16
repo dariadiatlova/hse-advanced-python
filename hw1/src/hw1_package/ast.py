@@ -2,8 +2,31 @@ import ast
 import networkx as nx
 import inspect
 
-from hw1 import HW_1_ROOT_PATH
-from hw1.fibonacchi import get_n_fibonacci_number
+
+def get_n_fibonacci_number(n: int):
+    """
+    Simple version of fibonacci number calculations, with cashing.
+    :param n: int number of fibonacci sequences to return.
+    :return: int n'th fibonacci number.
+    """
+    first_fibonacci_number = 0
+    second_fibonacci_number = 1
+
+    if n == 1:
+        return first_fibonacci_number
+
+    elif n == 2:
+        return second_fibonacci_number
+
+    elif n < 1:
+        raise AssertionError("Function takes only positive integers.")
+
+    else:
+        for i in range(n - 2):
+            to_become_first = second_fibonacci_number
+            second_fibonacci_number = first_fibonacci_number + second_fibonacci_number
+            first_fibonacci_number = to_become_first
+        return second_fibonacci_number
 
 
 class AssignmentVisitor(ast.NodeVisitor):
@@ -40,7 +63,7 @@ class AssignmentVisitor(ast.NodeVisitor):
         super().generic_visit(node)
 
 
-def main(image_path: str = f"{HW_1_ROOT_PATH}/artifacts/ast.png"):
+def main(image_path: str = f"artifacts/ast.png"):
     tree = AssignmentVisitor()
     function_text = inspect.getsource(get_n_fibonacci_number)
     module = ast.parse(source=function_text)
@@ -49,5 +72,5 @@ def main(image_path: str = f"{HW_1_ROOT_PATH}/artifacts/ast.png"):
     p.write_png(image_path)
 
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()

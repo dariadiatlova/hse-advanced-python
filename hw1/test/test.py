@@ -1,5 +1,5 @@
 import pytest
-from hw1.fibonacchi import get_n_fibonacci_number
+from hw1.src.hw1_package.fibonacci import get_n_fibonacci_number
 
 
 def test_fibonacci(sequence):
