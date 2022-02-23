@@ -18,18 +18,19 @@ class Matrix:
             if len(other_matrix.matrix[i]) != other_matrix.shape[1]:
                 raise AssertionError("All rows in a matrix should have the same number of columns.")
 
-        # shapes a matched for A @ B
+        # shapes are matched for A @ B
         if dot_product:
             a_rows = self.shape[0]
             b_cols = other_matrix.shape[1]
             if a_rows != b_cols:
                 raise ValueError(f"Can not conduct matrix multiplication, check matrix shape: "
                                  f"{self.shape} and {other_matrix.shape}")
+
         # shapes are matched for A + B or A * B
         else:
             if self.shape != other_matrix.shape:
-                raise ValueError(f"Can not add matrices of different shapes"
-                                 " got matrices of shape: {self.shape} and {other_matrix.shape}")
+                raise ValueError(f"Can not conduct addition or point-wise multiplication for matrices of different "
+                                 "shapes! Got matrices of shape: {self.shape} and {other_matrix.shape}")
 
     @staticmethod
     def _get_rows_multiplication(row1, row2):
