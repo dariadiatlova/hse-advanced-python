@@ -26,4 +26,3 @@ def test_easy_task(txt_save_path: str = f"{HW3_ROOT_PATH}/artifacts/easy"):
     save_matrix_to_txt(addition, f"{txt_save_path}/matrix+.txt")
     save_matrix_to_txt(point_wise_multiplication, f"{txt_save_path}/matrix*.txt")
     save_matrix_to_txt(dot_product, f"{txt_save_path}/matrix@.txt")
-
