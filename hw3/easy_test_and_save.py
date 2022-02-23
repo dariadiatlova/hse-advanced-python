@@ -1,10 +1,13 @@
 import numpy as np
+
 from hw3 import HW3_ROOT_PATH
 from hw3.matrix_library import Matrix
+from hw3.utils import save_matrix_to_txt
+
 np.random.seed(0)
 
 
-def test_easy_task(txt_save_path: str = f"{HW3_ROOT_PATH}/artifacts"):
+def test_easy_task(txt_save_path: str = f"{HW3_ROOT_PATH}/artifacts/easy"):
     sample1 = np.random.randint(0, 10, (10, 10))
     sample2 = np.random.randint(0, 10, (10, 10))
 
@@ -20,11 +23,7 @@ def test_easy_task(txt_save_path: str = f"{HW3_ROOT_PATH}/artifacts"):
         "Point-wise multiplication of matrices is incorrect!"
     assert dot_product.matrix == (sample1 @ sample2).tolist(), "Dot product of matrices is incorrect!"
 
-    with open(f"{txt_save_path}/matrix+.txt", "w") as f:
-        f.write(addition.__str__())
+    save_matrix_to_txt(addition, f"{txt_save_path}/matrix+.txt")
+    save_matrix_to_txt(point_wise_multiplication, f"{txt_save_path}/matrix*.txt")
+    save_matrix_to_txt(dot_product, f"{txt_save_path}/matrix@.txt")
 
-    with open(f"{txt_save_path}/matrix*.txt", "w") as f:
-        f.write(point_wise_multiplication.__str__())
-
-    with open(f"{txt_save_path}/matrix@.txt", "w") as f:
-        f.write(dot_product.__str__())
